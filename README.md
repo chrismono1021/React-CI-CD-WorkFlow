@@ -1,3 +1,4 @@
 # React CI/CD Workflow App
 
-Domain: react-ci-cd-workflow-app.surge.sh
+Production Domain: production-majestic-workflow.surge.sh
+Staging Domain: staging-majestic-workflow.surge.sh
