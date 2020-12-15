@@ -1,4 +1,4 @@
-![](https://github.com/alialaa/github-actions-course-react/workflows/CI/badge.svg?branch=develop&event=push)
+![](https://github.com/IamManchanda/react-ci-cd-workflow-app/workflows/CI/badge.svg?branch=develop&event=push)
 
 # React CI/CD Workflow App
 
