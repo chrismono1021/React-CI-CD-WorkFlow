@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.5.0",
@@ -46,6 +48,7 @@
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
+    "@vercel/ncc": "^0.25.1",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^4.3.6",
     "prettier": "2.2.1",

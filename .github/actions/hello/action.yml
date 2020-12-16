@@ -1,0 +1,14 @@
+name: Hello World
+author: Harry Manchanda
+description: Some description
+inputs:
+  who-to-greet:
+    description: Who to Greet
+    required: true
+    default: Harry
+outputs:
+  time:
+    description: The Greeting time
+runs:
+  using: node12
+  main: dist/index.js
