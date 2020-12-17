@@ -1,5 +1,5 @@
 name: Open Github Issue
-author: IamManchanda
+author: Harry Manchanda
 description: Opens a github issue
 inputs:
   token:
