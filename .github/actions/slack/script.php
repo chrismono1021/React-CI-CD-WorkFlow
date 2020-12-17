@@ -3,11 +3,10 @@
 require_once "vendor/autoload.php";
 Requests::register_autoloader();
 
-var_dump($argv);
-var_dump($_ENV);
+echo "::debug ::Sending a request to slack\n";
 
-/* $response = Requests::post(
-  "https://hooks.slack.com/services/id_here", 
+$response = Requests::post(
+  $_ENV['INPUT_SLACK_WEBHOOK'], 
   array(
     'Content-type' => 'application/json'
   ),
@@ -20,8 +19,7 @@ var_dump($_ENV);
           'text' => 
           array (
             'type' => 'mrkdwn',
-            'text' => 'You have a new request:
-    *<fakeLink.toEmployeeProfile.com|Fred Enriquez - New device request>*',
+            'text' => $_ENV['INPUT_MESSAGE'],
           ),
         ),
         1 => 
@@ -32,14 +30,22 @@ var_dump($_ENV);
             0 => 
             array (
               'type' => 'mrkdwn',
-              'text' => '*Type:*
-    Computer (laptop)',
+              'text' => "*Repository:*\n{$_ENV['GITHUB_REPOSITORY']}",
             ),
             1 => 
             array (
               'type' => 'mrkdwn',
-              'text' => '*When:*
-    Submitted Aut 10',
+              'text' => "*Event:*\n{$_ENV['GITHUB_EVENT_NAME']}",
+            ),
+            3 => 
+            array (
+              'type' => 'mrkdwn',
+              'text' => "*Ref:*\n{$_ENV['GITHUB_REF']}",
+            ),
+            4 => 
+            array (
+              'type' => 'mrkdwn',
+              'text' => "*SHA:*\n{$_ENV['GITHUB_SHA']}",
             ),
           ),
         ),
@@ -48,8 +54,11 @@ var_dump($_ENV);
   ),
 );
 
+echo "::group::Slack Response logs\n";
 var_dump($response);
+echo "::endgroup::\n";
 
 if (!$response->success) {
   echo $response->body;
-} */
+  exit(1);
+}
