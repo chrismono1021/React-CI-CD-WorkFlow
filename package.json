@@ -18,9 +18,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "generate-action:hello": "npx ncc build ./.github/actions/hello/index.js -o ./.github/actions/hello/dist",
+    "generate-action:issue": "npx ncc build ./.github/actions/issue/index.js -o ./.github/actions/issue/dist",
     "format:check": "prettier --check \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\"",
-    "format": "prettier --write \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\"",
-    "recompile": "npx ncc build ./.github/actions/hello/index.js -o ./.github/actions/hello/dist"
+    "format": "prettier --write \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\""
   },
   "husky": {
     "hooks": {

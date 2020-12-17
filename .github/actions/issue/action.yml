@@ -1,0 +1,22 @@
+name: Open Github Issue
+author: IamManchanda
+description: Opens a github issue
+inputs:
+  token:
+    description: Github Token
+    required: true
+  title:
+    description: Issue Title
+    required: true
+  body:
+    description: Issue Body
+    required: false
+  assignees:
+    description: Issue Assignees
+    required: false
+outputs:
+  issue:
+    description: The issue object as a json string
+runs:
+  using: node12
+  main: dist/index.js 
