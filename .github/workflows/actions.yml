@@ -6,7 +6,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/issue
         id: issue
-        with: 
+        with:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: Title
           body: Body
@@ -15,9 +15,9 @@ jobs:
             HarryJamstack
       - run: |
           echo ${{ steps.issue.outputs.issue }}
-      - uses: ./.github/actions/hello
+      - uses: ./.github/actions/hello-docker
         id: hello
-        with: 
+        with:
           who-to-greet: World
       - run: |
           echo "Time: ${{ steps.hello.outputs.time }}"
