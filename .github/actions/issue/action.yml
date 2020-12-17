@@ -19,4 +19,4 @@ outputs:
     description: The issue object as a json string
 runs:
   using: node12
-  main: dist/index.js 
+  main: dist/index.js
