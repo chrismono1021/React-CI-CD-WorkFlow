@@ -37,12 +37,12 @@ $response = Requests::post(
               'type' => 'mrkdwn',
               'text' => "*Event:*\n{$_ENV['GITHUB_EVENT_NAME']}",
             ),
-            3 => 
+            2 => 
             array (
               'type' => 'mrkdwn',
               'text' => "*Ref:*\n{$_ENV['GITHUB_REF']}",
             ),
-            4 => 
+            3 => 
             array (
               'type' => 'mrkdwn',
               'text' => "*SHA:*\n{$_ENV['GITHUB_SHA']}",
